@@ -11,6 +11,10 @@ import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.World;
 import org.jbox2d.dynamics.joints.MouseJoint;
 
+import javax.swing.*;
+
+import static javax.swing.JOptionPane.DEFAULT_OPTION;
+
 
 public class BasicPhysicsEngineUsingBox2D {
 	/* Author: Michael Fairbank
@@ -368,7 +372,14 @@ public class BasicPhysicsEngineUsingBox2D {
 			}
 			System.out.println(counter);
 			if (counter == 36) {
-				System.exit(1);
+				JOptionPane optionPane = new JOptionPane("CONGRATULATIONS! YOU WIN! \nITS TIME FOR CELEBRATIONS!", JOptionPane.WARNING_MESSAGE, DEFAULT_OPTION, null, new  Object[]{"YAAYY!!"}, null);
+
+				JDialog dialog = optionPane.createDialog(null, "VICTORY!");
+				dialog.setVisible(true);
+
+				if(optionPane.getValue() != null) {
+					System.exit(1);
+				}
 			}
 		}
 		world.step(DELTA_T, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
