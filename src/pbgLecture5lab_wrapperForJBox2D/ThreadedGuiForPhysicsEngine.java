@@ -77,7 +77,7 @@ public class ThreadedGuiForPhysicsEngine {
 						buttonPressCount++; //Incrementation to notice number of shots
 
 						if (buttonPressCount > 5) {
-							JOptionPane optionPane = new JOptionPane("HA HA! YOU LOSE! \nGO HOME & CRY TO YOUR MAMA!", JOptionPane.WARNING_MESSAGE, DEFAULT_OPTION, null, new  Object[]{"NOOOO!!"}, null);
+							JOptionPane optionPane = new JOptionPane("HA HA! YOU LOSE! \nGO HOME & CRY TO YOUR MAMA!", INFORMATION_MESSAGE, DEFAULT_OPTION, null, new  Object[]{"NOOOO!!"}, null);
 
 							JDialog dialog = optionPane.createDialog(null, "DEFEAT!");
 							dialog.setVisible(true);

@@ -372,7 +372,7 @@ public class BasicPhysicsEngineUsingBox2D {
 			}
 			System.out.println(counter);
 			if (counter == 36) {
-				JOptionPane optionPane = new JOptionPane("CONGRATULATIONS! YOU WIN! \nITS TIME FOR CELEBRATIONS!", JOptionPane.WARNING_MESSAGE, DEFAULT_OPTION, null, new  Object[]{"YAAYY!!"}, null);
+				JOptionPane optionPane = new JOptionPane("CONGRATULATIONS! YOU WIN! \nITS TIME FOR CELEBRATIONS!", JOptionPane.INFORMATION_MESSAGE, DEFAULT_OPTION, null, new  Object[]{"YAAYY!!"}, null);
 
 				JDialog dialog = optionPane.createDialog(null, "VICTORY!");
 				dialog.setVisible(true);
