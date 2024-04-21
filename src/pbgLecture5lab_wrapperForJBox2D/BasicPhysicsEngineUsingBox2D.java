@@ -86,7 +86,7 @@ public class BasicPhysicsEngineUsingBox2D {
 //			public BasicRectangle(double sx, double sy, double vx, double vy, double width, double height, double orientation, double angularVeloctiy, boolean improvedEuler, Color col, double mass) {
 
 		float s=1.2f;
-		particles.add(new BasicParticle(WORLD_WIDTH/2-5, WORLD_HEIGHT/2-1,0,0, r,Color.WHITE, 1, linearDragForce));
+		particles.add(new BasicParticle(WORLD_WIDTH/2-4.7f, WORLD_HEIGHT/2-0.8f,0,0, r,Color.WHITE, 1, linearDragForce));
 		/*polygons.add (new BasicPolygon(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0,0, r*3,Color.RED, 3, linearDragForce,4));
 		polygons.add (new BasicPolygon(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0,0, r*3,Color.CYAN, 3, linearDragForce,4));
 		polygons.add (new BasicPolygon(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0,0, r*3,Color.CYAN, 3, linearDragForce,4));*/
@@ -97,7 +97,7 @@ public class BasicPhysicsEngineUsingBox2D {
 		//A Structure to create the stack of bricks
 		int numRows = 8;
 		float startX = WORLD_WIDTH / 2+1;
-		float startY = WORLD_HEIGHT / 2+3.5f;
+		float startY = WORLD_HEIGHT / 2+3.2f;
 		float offsetY = r * 3;
 		float offsetX = r * 1.5f;
 
