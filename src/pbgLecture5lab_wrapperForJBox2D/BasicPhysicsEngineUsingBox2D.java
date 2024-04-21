@@ -87,12 +87,7 @@ public class BasicPhysicsEngineUsingBox2D {
 
 		float s=1.2f;
 		particles.add(new BasicParticle(WORLD_WIDTH/2-4.7f, WORLD_HEIGHT/2-0.8f,0,0, r,Color.WHITE, 1, linearDragForce));
-		/*polygons.add (new BasicPolygon(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0,0, r*3,Color.RED, 3, linearDragForce,4));
-		polygons.add (new BasicPolygon(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0,0, r*3,Color.CYAN, 3, linearDragForce,4));
-		polygons.add (new BasicPolygon(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0,0, r*3,Color.CYAN, 3, linearDragForce,4));*/
-		//polygons.add (new BasicPolygon(WORLD_WIDTH/2-1, WORLD_HEIGHT/2, 0,0, r*3,Color.YELLOW, 3, linearDragForce,4));
-		//polygons.add (new BasicPolygon(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0,0, r*3,Color.YELLOW, 3, linearDragForce,4));
-		//polygons.add (new BasicPolygon(WORLD_WIDTH/2+1, WORLD_HEIGHT/2, 0,0, r*3,Color.YELLOW, 3, linearDragForce,4));
+
 
 		//A Structure to create the stack of bricks
 		int numRows = 8;
@@ -101,36 +96,22 @@ public class BasicPhysicsEngineUsingBox2D {
 		float offsetY = r * 3;
 		float offsetX = r * 1.5f;
 
+		Color[] rowColors = {Color.BLUE, Color.RED, Color.YELLOW, Color.MAGENTA, Color.ORANGE, Color.WHITE, Color.GREEN, Color.CYAN};
+
 		for (int row = 0; row < numRows; row++) {
 			int numPolygonsInRow = row + 1;
 			float rowStartX = startX - (numPolygonsInRow - 1) * offsetX / 2;
 			float rowStartY = startY - row * offsetY;
 
+			Color rowColor = rowColors[row % rowColors.length];
+
 			for (int col = 0; col < numPolygonsInRow; col++) {
 				float x = rowStartX + col * offsetX;
 				float y = rowStartY;
 
-				polygons.add(new BasicPolygon(x, y, 0, 0, r * 3, Color.BLUE, 5, linearDragForce, 4));
+				polygons.add(new BasicPolygon(x, y, 0, 0, r * 3, rowColor, 5, linearDragForce, 4));
 			}
 		}
-
-
-
-		//particles.add(new BasicParticle(1,3,-1.2f*s,-1.4f*s, r,Color.BLUE, 2, 0));
-//		particles.add(new BasicParticle(3*r+WORLD_WIDTH/2,WORLD_HEIGHT/2,2,6.7f, r*3,Color.BLUE, 90, 0));
-//		particles.add(new BasicParticle(r+WORLD_WIDTH/2,WORLD_HEIGHT/2,3.5f,5.2f, r,Color.RED, 2, 0));
-		
-//		// Example revolute joint creation:
-//		BasicPolygon p1 = polygons.get(0);
-//		BasicParticle p2 = particles.get(0);
-//		RevoluteJointDef jointDef=new RevoluteJointDef();
-//		jointDef.bodyA = p1.body;
-//		jointDef.bodyB = p2.body;
-//		jointDef.collideConnected = false;  // this means we don't want these two connected bodies to have collision detection.
-//		jointDef.localAnchorA=new Vec2(0.2f,0.2f);
-//		jointDef.localAnchorB=new Vec2(-0.2f,-0.2f);
-//		world.createJoint(jointDef);
-//		
 
 		
 
