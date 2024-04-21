@@ -112,7 +112,7 @@ public class BasicPhysicsEngineUsingBox2D {
 				float x = rowStartX + col * (brickSize + gapBetweenBricks);
 				float y = rowStartY;
 
-				polygons.add(new BasicPolygon(x, y, 0, 0, brickSize, rowColor, 5, linearDragForce, 4));
+				polygons.add(new BasicPolygon(x, y, 0, 0, brickSize, rowColor, 10, linearDragForce, 4));
 			}
 		}
 
