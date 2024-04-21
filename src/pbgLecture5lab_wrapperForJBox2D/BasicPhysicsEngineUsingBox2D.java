@@ -91,25 +91,28 @@ public class BasicPhysicsEngineUsingBox2D {
 
 		//A Structure to create the stack of bricks
 		int numRows = 8;
-		float startX = WORLD_WIDTH / 2+1;
-		float startY = WORLD_HEIGHT / 2+3.2f;
+		float startX = WORLD_WIDTH / 2 + 1;
+		float startY = WORLD_HEIGHT / 2 + 3.2f;
 		float offsetY = r * 3;
 		float offsetX = r * 1.5f;
+		float brickSize = r * 3;
+		float gapBetweenBricks = 0.1f; // Hard-coded gap between bricks
 
-		Color[] rowColors = {Color.BLUE, Color.RED, Color.YELLOW, Color.MAGENTA, Color.ORANGE, Color.WHITE, Color.GREEN, Color.CYAN};
+// Create an array of colors for the rows
+		Color[] rowColors = {Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.ORANGE, Color.MAGENTA, Color.CYAN, Color.PINK};
 
 		for (int row = 0; row < numRows; row++) {
 			int numPolygonsInRow = row + 1;
-			float rowStartX = startX - (numPolygonsInRow - 1) * offsetX / 2;
+			float rowStartX = startX - ((numPolygonsInRow * brickSize) + ((numPolygonsInRow - 1) * gapBetweenBricks)) / 2;
 			float rowStartY = startY - row * offsetY;
 
 			Color rowColor = rowColors[row % rowColors.length];
 
 			for (int col = 0; col < numPolygonsInRow; col++) {
-				float x = rowStartX + col * offsetX;
+				float x = rowStartX + col * (brickSize + gapBetweenBricks);
 				float y = rowStartY;
 
-				polygons.add(new BasicPolygon(x, y, 0, 0, r * 3, rowColor, 5, linearDragForce, 4));
+				polygons.add(new BasicPolygon(x, y, 0, 0, brickSize, rowColor, 5, linearDragForce, 4));
 			}
 		}
 
